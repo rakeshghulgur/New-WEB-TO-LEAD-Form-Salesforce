@@ -1,5 +1,8 @@
-debugger;
-function beforesubmit(){
+//debugger;
+let capthachecked  = false;
+function beforesubmit(event) {
+
+if (capthachecked){
     let outputdate = document.querySelector(".outputdate");
     let inputdate = document.querySelector(".inputdate");
     console.log("inputdate.value", inputdate.value);//string ---> date(en_US)
@@ -7,6 +10,11 @@ function beforesubmit(){
 let formattedDate = new Date(inputdate.value).toLocaleDateString("en-US");
 outputdate.value = formattedDate;
   
+}else{
+    alert("please check the reCAPTCHA box to submit the Lead");
+    event.preventDefault();
+}
+    
 }
 
 function timestamp() { 
@@ -21,3 +29,8 @@ function timestamp() {
  } 
 }
  setInterval(timestamp, 500); 
+
+ function captchasuccess(){
+    capthachecked = true;
+
+ }
