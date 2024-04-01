@@ -1,4 +1,3 @@
-//debugger;
 let capthachecked  = false;
 function beforesubmit(event) {
 
