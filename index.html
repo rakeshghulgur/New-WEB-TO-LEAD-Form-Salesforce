@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="script.js"></script>
    <h1>Create Lead</h1>
     
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5g000007n4KX" 
     method="POST" onsubmit="beforesubmit()">
     
+    <input type=hidden name='captcha_settings' value='{"keyname":"WebToLeadSalesforce","fallback":"true","orgId":"00D5g000007n4KX","ts":""}'>
+
     <input type=hidden name="oid" value="00D5g000007n4KX">
     <input type=hidden name="retURL" value="https://rakeshghulgur.github.io/New-WEB-TO-LEAD-Form-Salesforce/thanks.html">  
     <!-- https://github.com/rakeshghulgur/Personal-Portfolio/blob/master/index.html -->
@@ -57,8 +60,10 @@
       <br/>
      -->
     <input type="submit" name="submit" class="submit">
+
+    <div class="g-recaptcha" data-sitekey="6LfrCKspAAAAALrBO6pe_zTsjYe0r5vD5v6ZDEGO"></div>
     
-    </form>
+  </form>
     
 </body>
 </html>
